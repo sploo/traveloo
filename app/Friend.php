@@ -4,7 +4,11 @@ namespace App;
 
 class Friend extends BaseModel
 {
-  const STATUS = ['PENDING','APPROVED'];
+
+  const STATUS = [
+    'PENDING' => 1,
+    'APPROVED' => 2
+  ];
 
   /**
    * The attributes that are mass assignable.
@@ -12,7 +16,7 @@ class Friend extends BaseModel
    * @var array
    */
   protected $fillable = [
-      'user_id','friend_id','status',
+      'user_id', 'friend_id', 'status',
   ];
 
   public function user(){
