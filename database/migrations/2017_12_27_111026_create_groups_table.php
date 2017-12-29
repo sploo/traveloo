@@ -17,7 +17,7 @@ class CreateGroupsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('name');
-            $table->string('description');
+            $table->string('description');            
             $table->timestamps();
         });
     }
