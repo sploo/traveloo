@@ -52,6 +52,10 @@ class AppDeploy extends Command
         $status = shell_exec('sudo git pull');
         $this->info($status);
 
+        $this->info('Update environment file');
+        $status = shell_exec("sudo cp .env.$env .env -f");
+        $this->info($status);
+
         $this->info('Perform Composer install');
         $status = shell_exec('composer install');
         $this->info($status);
