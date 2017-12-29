@@ -53,7 +53,7 @@ class AppDeploy extends Command
         $this->info($status);
 
         $this->info('Update environment file');
-        $status = shell_exec("sudo cp .env.$env .env -f");
+        $status = shell_exec("sudo cp .env.$env .env");
         $this->info($status);
 
         $this->info('Perform Composer install');
