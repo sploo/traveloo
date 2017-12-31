@@ -40,7 +40,7 @@ class AppDeploy extends Command
     public function handle()
     {
         $this->info('Detecting environment via GIT branch');
-        $env = shell_exec('sudo git rev-parse --abbrev-ref HEAD');
+        $env = trim(shell_exec('sudo git rev-parse --abbrev-ref HEAD'));
         $this->info('Environment detected:' . $env);
 
         $proceedDeploy = $this->ask('Proceed with the Deployment (Yes/n)?');
@@ -52,7 +52,7 @@ class AppDeploy extends Command
         $status = shell_exec('sudo git pull');
         $this->info($status);
 
-        $this->info('Update environment file');
+        $this->info('Update environment file');        
         $status = shell_exec("sudo cp .env.$env .env");
         $this->info($status);
 
