@@ -41,8 +41,7 @@ class AppDeploy extends Command
     {
         $this->info('Detecting environment via GIT branch');
         $env = shell_exec('sudo git rev-parse --abbrev-ref HEAD');
-        $env = trim($env);
-        
+        $env = trim($env);        
         $this->info('Environment detected:' . $env);
 
         $proceedDeploy = $this->ask('Proceed with the Deployment (Yes/n)?');
